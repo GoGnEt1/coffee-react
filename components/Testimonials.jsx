@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 const Testimonials = () => {
   return (
     <section className="testimonials">
-      <h3 className="title">Testimonials</h3>
+      <h2 className="title">Testimonials</h2>
       <div className="swiper">
         <Swiper
           modules={[Navigation, Pagination]}

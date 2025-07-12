@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 import { Link } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
-// import About from "./About";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,6 +15,18 @@ const Header = () => {
     document.body.classList.remove("show-mobile-menu");
     setMenuOpen(false);
   };
+
+  // 👇 Fermer le menu automatiquement quand la largeur devient >= 768px
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && menuOpen) {
+        closeMenu();
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [menuOpen]);
 
   return (
     <header className="fixed w-full z-50 text-white top-0">
@@ -31,13 +42,13 @@ const Header = () => {
 
         <ul
           className={`md:flex gap-8 list-none transition-all duration-300 
-            ${menuOpen ? "menu" : "hidden md:flex"}`}
+            ${menuOpen ? "menus" : "hidden md:flex"}`}
         >
           <li className="md:hidden flex justify-end">
             <FaTimes
               //   onClick={() => setMenuOpen(false)}
               onClick={closeMenu}
-              className="close-btn absolute text-xl cursor-pointer text-black top-[-65px] right-[-80px] sm:right-[-110px] hover:text-red-600"
+              className="close-btn absolute text-xl cursor-pointer text-black top-[30px] right-[20px] sm:right-[30px] hover:text-red-600"
             />
           </li>
 
@@ -47,7 +58,6 @@ const Header = () => {
                 to={link}
                 smooth={true}
                 duration={500}
-                // onClick={() => setMenuOpen(false)}
                 onClick={closeMenu}
                 className="relative capitalize text-base font-medium cursor-pointer text-white"
               >

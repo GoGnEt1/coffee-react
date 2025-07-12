@@ -6,6 +6,9 @@ import About from "../components/About";
 import Menu from "../components/Menu";
 import Testimonials from "../components/testimonials";
 import Gallery from "../components/Gallery";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 const App = () => {
   return (
@@ -16,6 +19,9 @@ const App = () => {
       <Menu />
       <Testimonials />
       <Gallery />
+      <Contact />
+      <Footer />
+      <ScrollToTop />
     </>
   );
 };

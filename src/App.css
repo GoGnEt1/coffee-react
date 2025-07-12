@@ -391,7 +391,7 @@ footer a:hover {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 464px) {
   nav .menus {
     width: 200px;
   }

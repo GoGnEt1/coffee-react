@@ -3,6 +3,7 @@ import testimonial from "../data/testimonials";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
+//pour obtenir les styles standards de swiper
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";

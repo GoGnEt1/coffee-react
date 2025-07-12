@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
-import { Link } from "react-scroll";
+import { Link } from "react-scroll"; //pour le scrollage
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = () => {
